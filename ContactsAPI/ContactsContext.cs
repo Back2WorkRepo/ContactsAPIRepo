@@ -5,7 +5,7 @@ namespace ContactsAPI
 {
     public class ContactsContext : DbContext
     {
-        public ContactsContext()
+        public ContactsContext(DbContextOptions<ContactsContext> options) :base(options)
         {
 
         }
@@ -19,7 +19,7 @@ namespace ContactsAPI
         {
         }
 
-        DbSet<Contact> contacts_table { get; set; }
+        public DbSet<Contact> contacts_table { get; set; }
 
 
 
